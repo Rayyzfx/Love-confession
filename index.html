@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Confession</title>
+    <style>
+        /* Gaya dasar untuk seluruh body */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background: #fefefe;
+            text-align: center; /* Untuk menengahkan teks */
+        }
+
+        /* Gaya untuk container utama */
+        .container {
+
+        }
+
+        /* Gaya untuk tombol */
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #ff6f61;
+            font-size: 18px;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s; /* Transisi halus saat hover */
+        }
+
+        button:hover {
+            background: #ff3b2f; /* Warna latar berubah saat hover */
+        }
+
+        /* Kelas untuk menyembunyikan elemen */
+        .hidden {
+            display: none;
+        }
+
+        /* Gaya untuk wadah hati */
+        #heartContainer {
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out; /* Animasi fade-in */
+        }
+
+        /* Gaya untuk hati */
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            background: red;
+            transform: rotate(-45deg);
+            margin: 0 auto; /* Untuk menengahkan hati */
+        }
+
+        /* Pseudo-elemen untuk membentuk bagian atas hati */
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 50px;
+        }
+
+        /* Keyframes untuk animasi fade-in */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Click the button to see my feelings for you</h1>
+        <button id="revealButton">Reveal</button>
+        <div id="heartContainer" class="hidden">
+            <div class="heart"></div>
+            <p>I love you!</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('revealButton').addEventListener('click', function() {
+            document.getElementById('heartContainer').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
